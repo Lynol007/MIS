@@ -2,7 +2,8 @@ body {
   font-family: 'Inter', sans-serif;
   margin: 0;
   color: #fff;
-  background: #111;
+  background: #000;
+  background: radial-gradient(circle at 60% 40%, #ff5100 0%, #000 80%);
 }
 
 /* Fade-in animation for main sections */
@@ -19,8 +20,9 @@ body {
 }
 
 /* Black and white background for the About page */
-.about-bg {
-  background: linear-gradient(135deg, #111 0%, #222 100%);
+.about-bg, .case-studies, .blog {
+  background: #000;
+  background: radial-gradient(circle at 60% 40%, #ff5100 0%, #000 80%);
   min-height: 100vh;
   border-radius: 12px;
 }
@@ -34,22 +36,22 @@ body {
   padding-top: 2rem;
 }
 .nav-pill {
-  background: rgba(24, 24, 24, 0.7);
+  background: rgba(20, 10, 5, 0.85);
   border-radius: 2rem;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  box-shadow: 0 4px 24px rgba(255,81,0,0.13);
   display: flex;
   align-items: center;
   padding: 0.7rem 2.7rem;
   gap: 2.5rem;
-  border: 1px solid rgba(255,255,255,0.18);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  border: none;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 .logo-pill {
   font-weight: 700;
   font-size: 1.2rem;
   background: none;
-  color: #fff;
+  color: #ff5100;
   margin-right: 2.5rem;
   letter-spacing: 1px;
 }
@@ -70,17 +72,16 @@ body {
   overflow: hidden;
 }
 .nav-pill nav a.active, .nav-pill nav a[aria-current="page"] {
-  background: rgba(255,255,255,0.12);
+  background: #ff5100;
   color: #fff;
   font-weight: 700;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
 }
 .nav-pill nav a::after {
   content: '';
   display: block;
   height: 3px;
   width: 0;
-  background: #fff;
+  background: linear-gradient(90deg, #020024 0%, #0000cf 100%);
   border-radius: 2px;
   transition: width 0.35s cubic-bezier(.4,0,.2,1);
   position: absolute;
@@ -93,7 +94,7 @@ body {
   width: 60%;
 }
 .nav-pill nav a:hover {
-  background: rgba(255,255,255,0.08);
+  background: #ff5100;
   color: #fff;
 }
 
@@ -143,6 +144,7 @@ body {
   font-weight: 800;
   color: #fff;
   margin: 0;
+  text-shadow: 0 2px 16px #fff, 0 0 8px #ff5100;
 }
 .about-meta {
   font-size: 1.05rem;
@@ -156,12 +158,13 @@ body {
   font-weight: 700;
 }
 .about-bio-card {
-  background: #181818;
-  border-radius: 1rem;
+  background: rgba(20, 10, 5, 0.92);
+  border-radius: 22px;
   padding: 1.2rem 1.5rem;
   font-size: 1.1rem;
   color: #fff;
-  box-shadow: 0 2px 8px rgba(255,255,255,0.08);
+  box-shadow: 0 4px 32px 0 rgba(255,81,0,0.18);
+  border: none;
   margin-bottom: 0.5rem;
   max-width: 480px;
 }
@@ -171,21 +174,26 @@ body {
   gap: 0.7rem;
   margin-top: 0.2rem;
 }
-.btn-pink, .btn-primary {
-  background: #fff;
-  color: #111;
+.btn-pink, .btn-primary, .btn-secondary, .read-more-btn {
+  background: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
+  background-size: 200% auto;
+  color: #fff;
   border: none;
-  border-radius: 1.5rem;
+  border-radius: 10px;
   padding: 0.7rem 1.5rem;
   font-weight: 700;
   font-size: 1rem;
   text-decoration: none;
-  transition: background 0.2s, color 0.2s;
-  box-shadow: 0 2px 8px rgba(255,255,255,0.08);
+  text-transform: uppercase;
+  transition: 0.5s;
+  box-shadow: 0 0 20px #eee;
+  display: inline-block;
+  margin: 10px 0;
 }
-.btn-pink:hover, .btn-primary:hover {
-  background: #222;
+.btn-pink:hover, .btn-primary:hover, .btn-secondary:hover, .read-more-btn:hover {
+  background-position: right center;
   color: #fff;
+  text-decoration: none;
 }
 .icon-btn {
   display: inline-flex;
@@ -194,17 +202,17 @@ body {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background: #181818;
-  color: #fff;
-  border: 2px solid #fff;
+  background: rgba(20, 10, 5, 0.85);
+  color: #ff5100;
+  border: none;
   margin-left: 0.1rem;
-  transition: background 0.2s, color 0.2s, border 0.2s;
+  transition: background 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s;
   font-size: 1.2rem;
 }
 .icon-btn:hover {
-  background: #fff;
-  color: #111;
-  border: 2px solid #fff;
+  background: #ff5100;
+  color: #fff;
+  box-shadow: 0 2px 8px #ff5100;
 }
 
 /* --- Case Studies Section --- */
@@ -223,6 +231,7 @@ body {
   margin-bottom: 0.5rem;
   text-align: center;
   color: #fff;
+  text-shadow: 0 2px 16px #fff, 0 0 8px #ff5100;
 }
 .case-studies .section-desc {
   text-align: center;
@@ -235,9 +244,10 @@ body {
   gap: 2rem;
 }
 .case-card {
-  background: #181818;
-  border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(255,255,255,0.08);
+  background: rgba(20, 10, 5, 0.92);
+  border-radius: 22px;
+  box-shadow: 0 4px 32px 0 rgba(255,81,0,0.18);
+  border: none;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -245,10 +255,10 @@ body {
 }
 .case-card:hover {
   transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 12px 32px rgba(255,255,255,0.18);
+  box-shadow: 0 12px 32px 0 #ff5100;
 }
 .card-gradient {
-  background: linear-gradient(120deg, #fff 0%, #bbb 100%);
+  background: linear-gradient(120deg, #ff5100 0%, #000 100%);
   height: 160px;
   display: flex;
   align-items: center;
@@ -256,7 +266,7 @@ body {
 }
 .card-icon {
   font-size: 2.5rem;
-  color: #111;
+  color: #ff5100;
 }
 .card-content {
   padding: 1.5rem;
@@ -268,10 +278,10 @@ body {
 .card-content h3 {
   margin: 0 0 0.5rem 0;
   font-size: 1.25rem;
-  color: #fff;
+  color: #ff5100;
 }
 .card-content p {
-  color: #bbb;
+  color: #fff;
   margin-bottom: 1.5rem;
 }
 
@@ -291,6 +301,7 @@ body {
   margin-bottom: 0.5rem;
   text-align: center;
   color: #fff;
+  text-shadow: 0 2px 16px #fff, 0 0 8px #ff5100;
 }
 .blog .section-desc {
   text-align: center;
@@ -305,20 +316,21 @@ body {
   margin: 0 auto;
 }
 .blog-post {
-  background: #181818;
-  border-radius: 14px;
-  box-shadow: 0 2px 12px rgba(255,255,255,0.07);
+  background: rgba(20, 10, 5, 0.92);
+  border-radius: 22px;
+  box-shadow: 0 4px 32px 0 rgba(255,81,0,0.18);
+  border: none;
   padding: 2rem;
   transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s;
 }
 .blog-post:hover {
   transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 12px 32px rgba(255,255,255,0.18);
+  box-shadow: 0 12px 32px 0 #ff5100;
 }
 .blog-post h3 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  color: #fff;
+  color: #ff5100;
 }
 .blog-date {
   color: #bbb;
@@ -331,13 +343,13 @@ body {
   border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
-  background: #fff;
-  color: #111;
+  background: linear-gradient(90deg, #ff5100 0%, #000 100%);
+  color: #fff;
   transition: background 0.2s, color 0.2s;
 }
 .btn-secondary:hover {
-  background: #222;
-  color: #fff;
+  background: linear-gradient(90deg, #000 0%, #ff5100 100%);
+  color: #ff5100;
 }
 
 .article-img {
@@ -347,7 +359,7 @@ body {
   display: block;
   margin: 0 auto 1.2rem auto;
   border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  box-shadow: 0 4px 24px #ff5100;
   object-fit: cover;
 }
 
@@ -395,4 +407,63 @@ body {
     width: 100px;
     height: 100px;
   }
+}
+
+.btn-grad {
+  background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
+  margin: 10px 0 0 0;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #fff, 0 2px 16px #ff5100;
+  border-radius: 10px;
+  display: block;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  letter-spacing: 1px;
+  margin-left: 0;
+  margin-right: auto;
+}
+.btn-grad:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 0 32px #fff, 0 2px 24px #ff5100;
+}
+
+.blog-post > div[id$='-full'] {
+  opacity: 0;
+  transform: translateY(-20px);
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s cubic-bezier(.4,0,.2,1), transform 0.5s cubic-bezier(.4,0,.2,1), max-height 0.5s cubic-bezier(.4,0,.2,1);
+}
+.blog-post > div[id$='-full'].show {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 2000px;
+  overflow: visible;
+}
+
+/* Hide expandable content by default */
+.hidden {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* Show content when .show is added */
+.show {
+  max-height: 1000px; /* Large enough for most content */
+  opacity: 1;
+  transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+.custom-audio {
+  display: none;
 } 
